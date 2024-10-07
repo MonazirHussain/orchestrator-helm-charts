@@ -27,11 +27,11 @@ server:
 #                      ResourceExhausted: 0.15
 
         cassandra:
-          hosts: ["cohort-db-cassandra.cohort-db.svc.cluster.local:9042"]
+          hosts: ["cache-service-db-cassandra.default.svc.cluster.local"]
           port: 9042
           keyspace: temporal
           user: "cassandra"
-          password: "eeybZfWMzP"
+          password: "VZxp0WEMaB"
           existingSecret: ""
           replicationFactor: 1
           consistency:
@@ -40,13 +40,13 @@ server:
               serialConsistency: "local_serial"
 
 cassandra:
-  enabled: false
+  enabled: true
 
 mysql:
   enabled: false
 
 postgresql:
-  enabled: true
+  enabled: false
 
 prometheus:
   enabled: false
@@ -54,7 +54,7 @@ prometheus:
 grafana:
   enabled: false
 elasticsearch:
-  enabled: false
+  enabled: true
 
 schema:
   createDatabase:

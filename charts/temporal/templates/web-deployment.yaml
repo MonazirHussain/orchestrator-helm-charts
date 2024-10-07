@@ -33,6 +33,8 @@ spec:
           env:
             - name: TEMPORAL_ADDRESS
               value: "{{ include "temporal.fullname" . }}-frontend.{{ .Release.Namespace }}.svc:{{ .Values.server.frontend.service.port }}"
+            - name: TEMPORAL_CSRF_COOKIE_INSECURE
+              value: "true"
           {{- if .Values.web.additionalEnv }}
           {{- toYaml .Values.web.additionalEnv | nindent 12 }}
           {{- end }}

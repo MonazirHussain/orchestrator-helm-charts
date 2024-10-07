@@ -381,7 +381,7 @@ schema:
   securityContext: {}
 elasticsearch:
   enabled: true
-  replicas: 3
+  replicas: 1
   persistence:
     enabled: false
   imageTag: 7.17.3
@@ -462,7 +462,7 @@ cassandra:
     tag: 3.11.3
     pullPolicy: IfNotPresent
   config:
-    cluster_size: 3
+    cluster_size: 1
     ports:
       cql: 9042
     num_tokens: 4
